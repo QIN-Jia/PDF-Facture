@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Générateur Facture</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="formulaire">
+      <h2>Créer PDF</h2>
+      <form action="#">
+        <label>Nom</label>
+        <input type="text" placeholder="Ex:Steev" class="form-nom" />
+        <label>Prénom</label>
+        <input type="text" placeholder="Ex:Johson" class="form-prenom" />
+        <label>Age</label>
+        <input type="text" placeholder="Ex: 20" class="form-age" />
+        <label>Adresse Mail</label>
+        <input type="email" placeholder="Ex: Q++@gmail.com" class="form-mail" />
+        <label>Adresse</label>
+        <input type="text" placeholder="Ex: 123 rue Abc" class="form-adresse" />
+        <input type="submit" class="submit" onclick="afficherPDF()" />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
