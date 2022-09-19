@@ -12,20 +12,15 @@ function afficherPDF() {
     body.innerHTML = `
     <div class="piece">
     <div class="logo">
-      <img src="logo.png" />
-      <p>Demo Facture PDF</p>
+      <img src="src/logo.png" />
     </div>
-    <h1>Pièce D'identité Partielle</h1>
+    <h1>Facture</h1>
     <div class="elements">
       <p>Nom: <strong>${form_nom}</strong></p>
       <p>Prenom: <strong>${form_prenom}</strong></p>
       <p>Age: <strong>${form_age}</strong></p>
       <p>Adresse Mail: <strong>${form_mail}</strong></p>
       <p>Adresse: <strong>${form_adresse}</strong></p>
-      <div class="certification">
-        <img src="logo.png" />
-        <p>Huayi Tech</p>
-      </div>
     </div>
   </div>
   <div class="generateurBtn">
@@ -55,9 +50,8 @@ function generateurPDF() {
     }
     if (nom_fichier != null) {
         html2pdf().set(opt).from(piece).save()
-    }else{
+    } else {
         alert("Veuillez choisir un nom")
     }
-
-
 }
+

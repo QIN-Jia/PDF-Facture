@@ -17,16 +17,70 @@
     <div class="formulaire">
       <h2>Créer PDF</h2>
       <form action="#">
-        <label>Nom</label>
-        <input type="text" placeholder="Ex:Steev" class="form-nom" />
-        <label>Prénom</label>
-        <input type="text" placeholder="Ex:Johson" class="form-prenom" />
-        <label>Age</label>
-        <input type="text" placeholder="Ex: 20" class="form-age" />
-        <label>Adresse Mail</label>
-        <input type="email" placeholder="Ex: Q++@gmail.com" class="form-mail" />
-        <label>Adresse</label>
-        <input type="text" placeholder="Ex: 123 rue Abc" class="form-adresse" />
+        <div class="block">
+          <label>Nom</label>
+          <input type="text" placeholder="Ex:Steev" class="form-nom" />
+        </div>
+        <div class="block">
+          <label>Prénom</label>
+          <input type="text" placeholder="Ex:Johson" class="form-prenom" />
+        </div>
+        <div class="block">
+          <label>Age</label>
+          <input type="text" placeholder="Ex: 20" class="form-age" />
+        </div>
+        <div class="block">
+          <label>Adresse Mail</label>
+          <input
+            type="email"
+            placeholder="Ex: Q++@gmail.com"
+            class="form-mail"
+          />
+        </div>
+        <div class="block">
+          <label>Adresse</label>
+          <input
+            type="text"
+            placeholder="Ex: 123 rue Abc"
+            class="form-adresse"
+          />
+        </div>
+        <div class="block">
+          <label>Date</label>
+          <input type="date" class="form-date" />
+        </div>
+        <div class="block">
+          <label>N°Document</label>
+          <input type="text" class="form-num-doc" />
+          <!-- 自动生成 -->
+        </div>
+        <div class="block">
+          <label>Réf Clt.</label>
+          <input type="text" class="form-ref-clt" />
+        </div>
+        <div class="ref-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="header-label">Réf</th>
+                <th class="header-label">Désignation</th>
+                <th class="header-label">Qté</th>
+                <th class="header-label">Unité</th>
+                <th class="header-label">P.U H.T</th>
+                <th class="header-label">Remise</th>
+                <th class="header-label">Total H.T</th>
+              </tr>
+              <tr class="tr-inputs">
+                <th>
+                  <div>
+                    <input type="text" />
+                  </div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
         <input type="submit" class="submit" onclick="afficherPDF()" />
       </form>
     </div>
