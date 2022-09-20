@@ -12,14 +12,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <div class="formulaire">
-      <h2>Créer PDF</h2>
+      <h2>GENERATION DE FACTURE</h2>
       <form action="#">
         <div class="block">
           <label>Nom</label>
-          <input type="text" placeholder="Ex:Steev" class="form-nom" />
+          <input type="text" placeholder="Ex:Steev" class="form-nom"/>
         </div>
         <div class="block">
           <label>Prénom</label>
@@ -52,14 +54,14 @@
         <div class="block">
           <label>N°Document</label>
           <input type="text" class="form-num-doc" />
-          <!-- 自动生成 -->
         </div>
         <div class="block">
           <label>Réf Clt.</label>
           <input type="text" class="form-ref-clt" />
         </div>
+
         <div class="ref-table">
-          <table>
+          <table id="facture-tab">
             <thead>
               <tr>
                 <th class="header-label">Réf</th>
@@ -70,15 +72,39 @@
                 <th class="header-label">Remise</th>
                 <th class="header-label">Total H.T</th>
               </tr>
-              <tr class="tr-inputs">
-                <th>
-                  <div>
-                    <input type="text" />
-                  </div>
-                </th>
-              </tr>
             </thead>
+            <tbody>
+              <tr class="tr-inputs">
+                <td>
+                  <input type="text"/>
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="number" min="0" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+              </tr>
+            </tbody>
           </table>
+          <div class="tab-button">
+            <button type="button" onclick="addRow()">ajouter un rang</button>
+            <button type="button" onclick="removeRow()">
+              supprimer un rang
+            </button>
+          </div>
         </div>
 
         <input type="submit" class="submit" onclick="afficherPDF()" />

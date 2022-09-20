@@ -4,7 +4,7 @@ body {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background-color: #18f;
+  background-color: rgb(130, 57, 53);
   flex-direction: column;
 }
 
@@ -25,7 +25,7 @@ body {
 h2 {
   font-size: 30px;
   margin-bottom: 20px;
-  color: #fff;
+  color: rgb(222, 156, 83);
 }
 
 form {
@@ -36,7 +36,7 @@ form {
 
 form label {
   font-size: 18px;
-  color: #fff;
+  color: rgb(222, 211, 140);
   margin: 5px 10px;
   text-align: right;
   display: inline-block;
@@ -50,7 +50,44 @@ form input {
   outline: 1;
   border: 0;
   vertical-align: top;
+  width: 100px;
+  background-color: rgb(222, 211, 140);
+}
+
+.form-nom {
   width: 250px;
+}
+
+.form-prenom {
+  width: 250px;
+}
+
+.form-age {
+  width: 250px;
+}
+
+.form-mail {
+  width: 250px;
+}
+
+.form-adresse {
+  width: 250px;
+}
+
+.form-date {
+  width: 250px;
+}
+
+.form-num-doc {
+  width: 250px;
+}
+
+.form-ref-clt{
+  width: 250px;
+}
+
+.form-date {
+  color: rgb(130, 57, 53);
 }
 
 .ref-table {
@@ -65,26 +102,50 @@ form input {
 .ref-table table,
 th,
 td {
-  border: 1px solid #fff;
+  border: 1px solid rgb(222, 156, 83);
 }
 
 .ref-table table th {
-  color: #fff;
+  color: rgb(222, 211, 140);
+}
+
+.tab-button {
+  flex-direction: column;
+  text-align: center;
+}
+
+.tr-inputs {
+  text-align: justify;
+}
+
+button {
+  color: rgb(130, 57, 53);
+  background-color: rgb(201, 186, 131);
+  margin-top: 10px;
+  border: 1px solid rgb(222, 156, 83);
+  border-radius: 6px;
+  cursor: pointer;
+  height: 30px;
+}
+
+button:hover {
+  background-color: rgb(130, 57, 53);
+  color: rgb(222, 211, 140);
 }
 
 .submit {
   margin-top: 20px;
-  color: #fff;
-  background-color: #18f;
-  border: 1px solid #fff;
+  color: rgb(130, 57, 53);
+  background-color: rgb(201, 186, 131);
+  border: 1px solid rgb(222, 156, 83);
   border-radius: 6px;
   cursor: pointer;
   align-self: center;
 }
 
 .submit:hover {
-  background-color: #fff;
-  color: #18f;
+  background-color: rgb(130, 57, 53);
+  color: rgb(222, 211, 140);
 }
 
 /*  --------------- PDF ---------------*/
@@ -152,4 +213,12 @@ h1 {
   text-decoration: 0;
   padding: 10px 30px;
   margin-left: 20px;
+}
+
+/* Test */
+
+td {
+  border: 1px solid gray;
+  width: 100px;
+  height: 30px;
 }

@@ -6,7 +6,15 @@ function afficherPDF() {
     var form_age = document.querySelector('.form-age').value
     var form_mail = document.querySelector('.form-mail').value
     var form_adresse = document.querySelector('.form-adresse').value
+
+
+
+
     var body = document.querySelector('body')
+
+    tableToArray()
+
+
 
     // Insertion
     body.innerHTML = `
@@ -55,3 +63,47 @@ function generateurPDF() {
     }
 }
 
+
+function addRow() {
+    var tbodyRef = document.getElementById("facture-tab").getElementsByTagName("tbody")[0];
+
+    var row = tbodyRef.insertRow(-1);
+    row.insertCell(0).appendChild(document.createElement('input'));
+    row.insertCell(1).appendChild(document.createElement('input'));
+    row.insertCell(2).appendChild(document.createElement('input'));
+    row.insertCell(3).appendChild(document.createElement('input'));
+    row.insertCell(4).appendChild(document.createElement('input'));
+    row.insertCell(5).appendChild(document.createElement('input'));
+    row.insertCell(6).appendChild(document.createElement('input'));
+}
+
+function removeRow() {
+    var tableID = "facture-tab";
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+
+    if (confirm("确定删除最后一行?")) {
+        if (rowCount > 1) {
+            table.deleteRow(-1);
+        }
+    } else {
+        alert("取消删除")
+    }
+}
+
+function tableToArray() {
+    var arrTab = []
+    $("table#facture-tab tr").each(function () {
+        var arrRow = []
+        var tabDate = $(this).find('td')
+        if (tabDate.length > 0) {
+            tabDate.each(function () {
+                arrRow.push($(this).text())
+            })
+            arrTab.push(arrRow)
+        }
+
+    })
+    // arr.forEach(e => console.log(e))
+    console.log(arrTab)
+}
