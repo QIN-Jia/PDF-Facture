@@ -1,7 +1,7 @@
 // Insertions des éléments dans le PDF
 function afficherPDF() {
     // les variables
-    var form_nom = document.querySelector('.form-nom').value
+    var form_nom = document.querySelector('.form-nom').value || ''
     var form_prenom = document.querySelector('.form-prenom').value
     var form_age = document.querySelector('.form-age').value
     var form_mail = document.querySelector('.form-mail').value
@@ -9,12 +9,9 @@ function afficherPDF() {
 
 
 
-
     var body = document.querySelector('body')
 
     tableToArray()
-
-
 
     // Insertion
     body.innerHTML = `
@@ -39,11 +36,6 @@ function afficherPDF() {
 }
 
 function generateurPDF() {
-    // const piece = document.querySelector(".piece")
-    // html2pdf()
-    //     .from(piece)
-    //     .save
-
     //nom du fichier
     var nom_fichier = prompt("Nom du fichier PDF : ")
 
@@ -68,13 +60,42 @@ function addRow() {
     var tbodyRef = document.getElementById("facture-tab").getElementsByTagName("tbody")[0];
 
     var row = tbodyRef.insertRow(-1);
-    row.insertCell(0).appendChild(document.createElement('input'));
-    row.insertCell(1).appendChild(document.createElement('input'));
-    row.insertCell(2).appendChild(document.createElement('input'));
-    row.insertCell(3).appendChild(document.createElement('input'));
-    row.insertCell(4).appendChild(document.createElement('input'));
-    row.insertCell(5).appendChild(document.createElement('input'));
-    row.insertCell(6).appendChild(document.createElement('input'));
+
+    var inputRef = document.createElement('input')
+    inputRef.type = "text"
+    inputRef.class = "ref"
+    row.insertCell(0).appendChild(inputRef);
+
+    var inputDesignation = document.createElement('input')
+    inputDesignation.type = "text"
+    inputDesignation.class = "designation"
+    row.insertCell(1).appendChild(inputDesignation);
+
+    var inputQte = document.createElement('input')
+    inputQte.type = "text"
+    inputQte.class = "qte"
+    row.insertCell(2).appendChild(inputQte);
+
+    var inputUnite = document.createElement('input')
+    inputUnite.type = "text"
+    inputUnite.class = "unite"
+    row.insertCell(3).appendChild(inputUnite);
+
+    var inputPUHT = document.createElement('input')
+    inputPUHT.type = "text"
+    inputPUHT.class = "puht"
+    row.insertCell(4).appendChild(inputPUHT);
+
+    var inputRemise = document.createElement('input')
+    inputRemise.type = "text"
+    inputRemise.class = "remise"
+    row.insertCell(5).appendChild(inputRemise);
+
+    var inputTotal = document.createElement('input')
+    inputTotal.type = "text"
+    inputTotal.class = "total"
+    row.insertCell(6).appendChild(inputTotal);
+
 }
 
 function removeRow() {
@@ -91,19 +112,17 @@ function removeRow() {
     }
 }
 
-function tableToArray() {
+function tableToArray() {               //TODO
     var arrTab = []
-    $("table#facture-tab tr").each(function () {
+    $("#facture-tab tbody tr").each(function () {
         var arrRow = []
-        var tabDate = $(this).find('td')
-        if (tabDate.length > 0) {
-            tabDate.each(function () {
-                arrRow.push($(this).text())
-            })
-            arrTab.push(arrRow)
-        }
-
+        var tabDate = $(this).find('td').find('input')
+        tabDate.each(function () {
+            arrRow.push($(this).val())
+        })
+        arrTab.push(arrRow)
     })
-    // arr.forEach(e => console.log(e))
     console.log(arrTab)
 }
+
+

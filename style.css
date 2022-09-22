@@ -114,10 +114,6 @@ td {
   text-align: center;
 }
 
-.tr-inputs {
-  text-align: justify;
-}
-
 button {
   color: rgb(130, 57, 53);
   background-color: rgb(201, 186, 131);
@@ -148,7 +144,7 @@ button:hover {
   color: rgb(222, 211, 140);
 }
 
-/*  --------------- PDF ---------------*/
+/*  ------------------------ PDF ------------------------ */
 .piece {
   background-color: #fff;
   height: 600px;
@@ -206,6 +202,9 @@ h1 {
 
 .generateurBtn button {
   padding: 10px 30px;
+  height:44px;
+  font-size: 15px;
+  width: 200px;
 }
 
 .generateurBtn a {
@@ -213,12 +212,5 @@ h1 {
   text-decoration: 0;
   padding: 10px 30px;
   margin-left: 20px;
-}
-
-/* Test */
-
-td {
-  border: 1px solid gray;
-  width: 100px;
-  height: 30px;
+  font-size: 15px;
 }
