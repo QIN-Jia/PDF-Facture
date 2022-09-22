@@ -1,12 +1,14 @@
 // Insertions des éléments dans le PDF
 function afficherPDF() {
-    // les variables
-    var form_nom = document.querySelector('.form-nom').value || ''
-    var form_prenom = document.querySelector('.form-prenom').value
-    var form_age = document.querySelector('.form-age').value
-    var form_mail = document.querySelector('.form-mail').value
-    var form_adresse = document.querySelector('.form-adresse').value
+if(confirm("确定"))
 
+    // les variables
+    var form_nom = document.querySelector('.form-nom').value
+    // var form_prenom = document.querySelector('.form-prenom').value
+    // var form_age = document.querySelector('.form-age').value
+    var form_code_postal = document.querySelector('.form-code-postal').value
+    var form_adresse = document.querySelector('.form-adresse').value
+    var form_ville = document.querySelector('.form-ville').value
 
 
     var body = document.querySelector('body')
@@ -21,11 +23,10 @@ function afficherPDF() {
     </div>
     <h1>Facture</h1>
     <div class="elements">
-      <p>Nom: <strong>${form_nom}</strong></p>
-      <p>Prenom: <strong>${form_prenom}</strong></p>
-      <p>Age: <strong>${form_age}</strong></p>
-      <p>Adresse Mail: <strong>${form_mail}</strong></p>
-      <p>Adresse: <strong>${form_adresse}</strong></p>
+      <p><strong>${form_nom}</strong></p>
+      <p><strong>${form_adresse}</strong></p>
+      <p><strong>${form_code_postal}  ${form_ville}</strong></p>
+      
     </div>
   </div>
   <div class="generateurBtn">
@@ -124,5 +125,14 @@ function tableToArray() {               //TODO
     })
     console.log(arrTab)
 }
+
+// function numDoc(obj) {
+//     var date = document.getElementById("date").value
+//     console.log(date)
+//     var ref_clt = document.getElementById("refclt").value
+//     numdoc.value = date + ref_clt
+// }
+
+
 
 

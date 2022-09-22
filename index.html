@@ -22,24 +22,17 @@
       <form action="#">
         <div class="block">
           <label>Nom</label>
-          <input type="text" placeholder="Ex:Steev" class="form-nom" />
+          <input type="text" placeholder="Ex: HUA YI" class="form-nom" />
         </div>
-        <div class="block">
+        <!-- <div class="block">
           <label>Prénom</label>
           <input type="text" placeholder="Ex:Johson" class="form-prenom" />
-        </div>
-        <div class="block">
+        </div> -->
+        <!-- <div class="block">
           <label>Age</label>
           <input type="text" placeholder="Ex: 20" class="form-age" />
-        </div>
-        <div class="block">
-          <label>Adresse Mail</label>
-          <input
-            type="email"
-            placeholder="Ex: Q++@gmail.com"
-            class="form-mail"
-          />
-        </div>
+        </div> -->
+
         <div class="block">
           <label>Adresse</label>
           <input
@@ -48,17 +41,38 @@
             class="form-adresse"
           />
         </div>
+
+        <div class="block">
+          <label>Code Postal</label>
+          <input
+            type="number"
+            placeholder="Ex: 75001"
+            class="form-code-postal"
+          />
+        </div>
+
+        <div class="block">
+          <label>Ville</label>
+          <input
+            type="text"
+            placeholder="Ex: Paris"
+            class="form-ville"
+          />
+        </div>
+
         <div class="block">
           <label>Date</label>
-          <input type="date" class="form-date" />
+          <input type="date" class="form-date" id="date" />
         </div>
-        <div class="block">
-          <label>N°Document</label>
-          <input type="text" class="form-num-doc" />
-        </div>
+
         <div class="block">
           <label>Réf Clt.</label>
-          <input type="text" class="form-ref-clt" />
+          <input type="text" class="form-ref-clt" id="refclt" />
+        </div>
+
+        <div class="block">
+          <label>N°Document</label>
+          <input id="numdoc" type="text" class="form-num-doc" />
         </div>
 
         <div class="ref-table">
@@ -95,7 +109,7 @@
                   <input type="text" class="remise" />
                 </td>
                 <td>
-                  <input type="text" class="total" />
+                  <input type="text" class="total" readonly />
                 </td>
               </tr>
             </tbody>

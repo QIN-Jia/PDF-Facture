@@ -29,13 +29,13 @@ h2 {
 }
 
 form {
-  width: 800px;
+  width: 900px;
   display: flex;
   flex-direction: column;
 }
 
 form label {
-  font-size: 18px;
+  font-size: 15px;
   color: rgb(222, 211, 140);
   margin: 5px 10px;
   text-align: right;
@@ -82,7 +82,7 @@ form input {
   width: 250px;
 }
 
-.form-ref-clt{
+.form-ref-clt {
   width: 250px;
 }
 
@@ -144,6 +144,8 @@ button:hover {
   color: rgb(222, 211, 140);
 }
 
+
+
 /*  ------------------------ PDF ------------------------ */
 .piece {
   background-color: #fff;
@@ -153,34 +155,40 @@ button:hover {
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
+  flex-direction: row;
+  display:flow-root;
   align-items: center;
-  margin-top: 50px;
+  margin: 5px 0px;
 }
 
 .logo img {
-  width: 100px;
+  margin-top: 15px;
+  width: 350px;
+  float: left;
+  margin-left: 20px;
 }
 
-.logo p {
-  margin-left: 20px;
-  font-weight: bold;
+.huayi-info {
+  margin-top: 15px;
+  margin-right: 20px;
+  float:right;
+  line-height: 5px;
 }
 
 h1 {
   text-align: center;
+  justify-content: flex-end;
   margin: 25px 0;
 }
 
 .elements {
   margin-left: 25px;
+  line-height: 5px;
 }
 
-.elements p {
+/* .elements p {
   margin: 25px 0;
-  font-size: 15px;
-}
+} */
 
 .certification {
   position: absolute;
@@ -202,7 +210,7 @@ h1 {
 
 .generateurBtn button {
   padding: 10px 30px;
-  height:44px;
+  height: 44px;
   font-size: 15px;
   width: 200px;
 }
