@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Générateur Facture</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="piece">
-      <div class="logo">
-        <img src="src/logo.png" />
-        <div class="huayi-info">
-          <h3><strong>HUA YI TECHNOLOGIE</strong></h3>
-          <p>1 Place Boieldieu</p>
-          <p>75002 PARIS</p>
-          <p>Tél: 06 59 80 96 18</p>
-          <p>www.huayitech.fr</p>
-          <p>Siret: 84894813900029</p>
-          <p>IBAN: FR76 3006 6100 0500 0204 5500 159</p>
-        </div>
-      </div>
 
-      <div class="elements">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur Facture</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="piece">
+
+    <div class="logo">
+      <img src="src/logo.png" />
+      <div class="huayi-info">
+        <h3><strong>HUA YI TECHNOLOGIE</strong></h3>
+        <p>1 Place Boieldieu</p>
+        <p>75002 PARIS</p>
+        <p>Tél: 06 59 80 96 18</p>
+        <p>www.huayitech.fr</p>
+        <p>Siret: 84894813900029</p>
+        <p>IBAN: FR76 3006 6100 0500 0204 5500 159</p>
+      </div>
+    </div>
+
+    <div class="row-2-info">
+      <div class="row-2-left">
+        <h3>FACTURE</h3>
+        <table class="row-2-tab" cellspacing="0">
+          <thead>
+            <th>Date</th>
+            <th>N°Document</th>
+            <th>Réf Clt.</th>
+          </thead>
+          <tbody>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tbody>
+        </table>
+      </div>
+      <div class="row-2-right">
         <h3>FACTURÉ À</h3>
         <p>Toto</p>
         <p>123 rue ABC</p>
         <p>75001 Paris</p>
       </div>
-      <h1>Facture</h1>
+    </div>
+
+    <div class="row-3">
+      <table class="row-3-tab" cellspacing="0">
+        <thead>
+          <th>Réf</th>
+          <th>Désignation</th>
+          <th>Qté</th>
+          <th>Unité</th>
+          <th>P.U H.T.</th>
+          <th>Remise</th>
+          <th>Total H.T.</th>
+        </thead>
+        <tbody>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row-4">
+      <div class="row-4-left">
+        <p>REGLEMENT : Virement Bancaire</p>
+        <p>ECHEANCE : xxx</p>
+        <table cellspacing="0">
+          <thead>
+            <th>TVA(%)</th>
+            <th>H.T</th>
+            <th>TVA</th>
+          </thead>
+          <tbody>
+            <td>20,00</td>
+            <td>0,00</td>
+            <td>0,00</td>
+          </tbody>
+        </table>
+      </div>
       
+      <div class="row-4-right">
+        <p>TOTAL HT : 0,00</p>
+        <p>TVA: 0,00</p>
+        <p class="net-a-payer">NET A PAYER(en Euro): 0,00</p>
+      </div>
+
     </div>
-    <div class="generateurBtn">
-      <button class="submit">Télécharger Le PDF</button>
-      <a href="index.html" class="submit"> Générer un autre PDF </a>
-    </div>
-    <scripts src="script.js"></script>
-  </body>
+
+    <p class="info-foot">
+      La propriété des marchandises désignés dans la présente facture ne sera transféré qu'au complet paiement de celle - ci.<br />
+      Aucun escompte n'est accordé en cas de règlement anticipé. Les contestations devront obligatoirement intervenir dans le délai de 15 jours.
+      En cas de retard de paiement, il sera appliqué des pénalités égales à 3 fois le taux d'intérêt légal.
+    </p>
+
+  </div>
+
+
+
+
+  </div>
+  <div class="generateurBtn">
+    <button class="submit">Télécharger Le PDF</button>
+    <a href="index.html" class="submit"> Générer un autre PDF </a>
+  </div>
+  <scripts src="script.js">
+    </script>
+</body>
+
 </html>

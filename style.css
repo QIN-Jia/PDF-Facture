@@ -99,8 +99,7 @@ form input {
   margin-right: auto;
 }
 
-.ref-table table,
-th,
+.ref-table table th,
 td {
   border: 1px solid rgb(222, 156, 83);
 }
@@ -144,19 +143,17 @@ button:hover {
   color: rgb(222, 211, 140);
 }
 
-
-
 /*  ------------------------ PDF ------------------------ */
 .piece {
   background-color: #fff;
-  height: 600px;
+  height: auto;
   width: 800px;
   position: relative;
 }
 
 .logo {
   flex-direction: row;
-  display:flow-root;
+  display: flow-root;
   align-items: center;
   margin: 5px 0px;
 }
@@ -171,26 +168,72 @@ button:hover {
 .huayi-info {
   margin-top: 15px;
   margin-right: 20px;
-  float:right;
+  float: right;
   line-height: 5px;
 }
 
-h1 {
-  text-align: center;
-  justify-content: flex-end;
+h3 {
+  /* text-align: center; */
   margin: 25px 0;
 }
 
-.elements {
+.row-2-info {
+  flex-direction: row;
+  display: flow-root;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.row-2-left {
   margin-left: 25px;
+  float: left;
+}
+
+.row-2-left h3 {
   line-height: 5px;
 }
 
-/* .elements p {
-  margin: 25px 0;
-} */
+.row-2-right {
+  margin-right: 245px;
+  line-height: 5px;
+  float: right;
+}
 
-.certification {
+.row-3 {
+  margin: 25px;
+}
+
+.row-3-tab {
+  width: 100%;
+}
+
+.row-4 {
+  margin: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.row-4-left {
+  float: left;
+}
+
+.row-4-right {
+  float: right;
+  text-align: end;
+}
+
+.info-foot {
+  margin: 25px;
+  font-size: 10px;
+}
+
+/* .certification {
   position: absolute;
   right: 20px;
   text-align: center;
@@ -202,7 +245,7 @@ h1 {
 
 .certification p {
   font-size: 20px;
-}
+} */
 
 .generateurBtn {
   display: flex;
