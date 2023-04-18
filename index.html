@@ -1,136 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Générateur Facture</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  </head>
-  <body>
-    <div class="formulaire">
-      <h2>GENERATION DE FACTURE</h2>
-      <form action="#">
-        <div class="block">
-          <label>Nom</label>
-          <input type="text" placeholder="Ex: HUA YI" class="form-nom" />
-        </div>
-        <!-- <div class="block">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur Facture</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="formulaire">
+    <h2>GENERATION DE FACTURE</h2>
+    <form action="#">
+      <div class="block">
+        <label>Nom</label>
+        <input type="text" placeholder="Ex: HUA YI" class="form-nom" />
+      </div>
+      <!-- <div class="block">
           <label>Prénom</label>
           <input type="text" placeholder="Ex:Johson" class="form-prenom" />
         </div> -->
-        <!-- <div class="block">
+      <!-- <div class="block">
           <label>Age</label>
           <input type="text" placeholder="Ex: 20" class="form-age" />
         </div> -->
 
-        <div class="block">
-          <label>Adresse</label>
-          <input
-            type="text"
-            placeholder="Ex: 123 rue Abc"
-            class="form-adresse"
-          />
+      <div class="block">
+        <label>Adresse</label>
+        <input type="text" placeholder="Ex: 123 rue Abc" class="form-adresse" />
+      </div>
+
+      <div class="block">
+        <label>Code Postal</label>
+        <input type="number" placeholder="Ex: 75001" class="form-code-postal" />
+      </div>
+
+      <div class="block">
+        <label>Ville</label>
+        <input type="text" placeholder="Ex: Paris" class="form-ville" />
+      </div>
+
+      <div class="block">
+        <label>Date</label>
+        <input type="date" class="form-date" id="date" />
+      </div>
+
+      <div class="block">
+        <label>Réf Clt.</label>
+        <input type="text" class="form-ref-clt" id="refclt" />
+      </div>
+
+      <div class="block">
+        <label>N°Document</label>
+        <input id="numdoc" type="text" class="form-num-doc" />
+      </div>
+
+      <div class="block">
+        <label>TVA(%)</label>
+        <input type="text" class="form-tva" />
+      </div>
+
+      <div class="ref-table">
+        <table id="facture-tab">
+          <thead>
+            <tr>
+              <th class="header-label">Réf</th>
+              <th class="header-label">Désignation</th>
+              <th class="header-label">Qté</th>
+              <th class="header-label">Unité</th>
+              <th class="header-label">P.U H.T</th>
+              <th class="header-label">Remise</th>
+              <th class="header-label">Total H.T</th>
+              <th class="header-label">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" class="ref" />
+              </td>
+              <td>
+                <input type="text" class="designation" />
+              </td>
+              <td>
+                <input type="text" class="qte" />
+              </td>
+              <td>
+                <input type="text" class="unite" />
+              </td>
+              <td>
+                <input type="text" class="puht" />
+              </td>
+              <td>
+                <input type="text" class="remise" />
+              </td>
+              <td>
+                <input type="text" class="total" readonly />
+              </td>
+              <td>
+                <input type="text" class="total-with-tva" readonly />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="tab-button">
+          <button onclick="addRow()">ajouter un rang</button>
+          <button onclick="removeRow()">
+            supprimer un rang
+          </button>
+          <button onclick="calculateTotals()">Calculer les totals</button>
         </div>
+      </div>
 
-        <div class="block">
-          <label>Code Postal</label>
-          <input
-            type="number"
-            placeholder="Ex: 75001"
-            class="form-code-postal"
-          />
-        </div>
+      <input type="submit" class="submit" onclick="afficherPDF()" />
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
 
-        <div class="block">
-          <label>Ville</label>
-          <input
-            type="text"
-            placeholder="Ex: Paris"
-            class="form-ville"
-          />
-        </div>
-
-        <div class="block">
-          <label>Date</label>
-          <input type="date" class="form-date" id="date" />
-        </div>
-
-        <div class="block">
-          <label>Réf Clt.</label>
-          <input type="text" class="form-ref-clt" id="refclt" />
-        </div>
-
-        <div class="block">
-          <label>N°Document</label>
-          <input id="numdoc" type="text" class="form-num-doc" />
-        </div>
-
-        <div class="ref-table">
-          <table id="facture-tab">
-            <thead>
-              <tr>
-                <th class="header-label">Réf</th>
-                <th class="header-label">Désignation</th>
-                <th class="header-label">Qté</th>
-                <th class="header-label">Unité</th>
-                <th class="header-label">P.U H.T</th>
-                <th class="header-label">Remise</th>
-                <th class="header-label">Total H.T</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <input type="text" class="ref" />
-                </td>
-                <td>
-                  <input type="text" class="designation" />
-                </td>
-                <td>
-                  <input type="text" class="qte" />
-                </td>
-                <td>
-                  <input type="text" class="unite" />
-                </td>
-                <td>
-                  <input type="text" class="puht" />
-                </td>
-                <td>
-                  <input type="text" class="remise" />
-                </td>
-                <td>
-                  <input type="text" class="total" readonly />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="tab-button">
-            <button type="button" onclick="addRow()">ajouter un rang</button>
-            <button type="button" onclick="removeRow()">
-              supprimer un rang
-            </button>
-          </div>
-
-          <div class="block">
-            <label>TVA(%)</label>
-            <input type="text" class="form-tva" />
-          </div>
-        </div>
-
-        <input type="submit" class="submit" onclick="afficherPDF()" />
-      </form>
-    </div>
-    <script src="script.js"></script>
-  </body>
 </html>
